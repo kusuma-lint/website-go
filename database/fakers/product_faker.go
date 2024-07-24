@@ -1,6 +1,7 @@
 package fakers
 
 import (
+	"log"
 	"math"
 	"math/rand"
 	"time"
@@ -14,11 +15,17 @@ import (
 )
 
 func ProductFaker(db *gorm.DB) *models.Product {
+	user := UserFaker(db)
+	err := db.Create(&user).Error
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	name := faker.Name()
 	return &models.Product{
 		ID:               uuid.New().String(),
-		UserID:           "",
-		Sku:              "",
+		UserID:           user.ID,
+		Sku:              slug.Make(name),
 		Name:             name,
 		Slug:             slug.Make(name),
 		Price:            decimal.NewFromFloat(fakePrice()),
