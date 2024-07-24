@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"google.golang.org/genproto/googleapis/type/decimal"
+	"github.com/shopspring/decimal"
 	"gorm.io/gorm"
 )
 
