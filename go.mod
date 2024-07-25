@@ -4,7 +4,12 @@ go 1.22.3
 
 require google.golang.org/genproto v0.0.0-20240722135656-d784300faade
 
-require github.com/shopspring/decimal v1.4.0 // indirect
+require (
+	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
+	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	github.com/shopspring/decimal v1.4.0 // indirect
+	github.com/urfave/cli v1.22.15 // indirect
+)
 
 require (
 	github.com/bxcodec/faker/v3 v3.8.1 // indirect
