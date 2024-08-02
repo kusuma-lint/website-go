@@ -37,6 +37,7 @@ func Run() {
 	dbConfig.DBPassword = getEnv("DB_PASSWORD", "password")
 	dbConfig.DBName = getEnv("DB_NAME", "web_db")
 	dbConfig.DBPort = getEnv("DB_PORT", "5432")
+	dbConfig.DBDriver = getEnv("DB_DRIVER", "postgres")
 
 	// cli utk inizialise db:migrate
 	flag.Parse()

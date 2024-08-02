@@ -34,7 +34,7 @@ type DBConfig struct {
 	DBPassword string
 	DBName     string
 	DBPort     string
-	// DBDriver   string
+	DBDriver   string
 }
 
 // utk handle pagination
