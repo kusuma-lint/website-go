@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type ProductImage struct {
 	ID         string `gorm:"size:36;not null;uniqueIndex;primary_key"`
@@ -14,3 +16,9 @@ type ProductImage struct {
 	CreatedAt  time.Time
 	UpdatedAt  time.Time
 }
+
+// Hook untuk mengisi ID otomatis
+// func (productImage *ProductImage) BeforeCreate(tx *gorm.DB) (err error) {
+// 	productImage.ID = uuid.New().String()
+// 	return
+// }
