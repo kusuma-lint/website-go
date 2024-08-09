@@ -3,7 +3,8 @@ package models
 import (
 	"time"
 
-	"google.golang.org/genproto/googleapis/type/decimal"
+	"github.com/shopspring/decimal"
+	// "google.golang.org/genproto/googleapis/type/decimal"
 )
 
 type CartItem struct {
