@@ -6,9 +6,12 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/bxcodec/faker/v3"
-	"github.com/google/uuid"
 	"github.com/gosimple/slug"
+
+	"github.com/bxcodec/faker/v3"
+
+	"github.com/google/uuid"
+
 	"github.com/kusuma-lint/website-go/app/models"
 	"github.com/shopspring/decimal"
 	"gorm.io/gorm"
@@ -44,7 +47,7 @@ func fakePrice() float64 {
 	return precision(rand.Float64()*math.Pow10(rand.Intn(8)), rand.Intn(2)+1)
 }
 
-// precision : a helpers function to set precision of price
+// precision | a helper function to set precision of price
 func precision(val float64, pre int) float64 {
 	div := math.Pow10(pre)
 	return float64(int64(val*div)) / div
