@@ -3,8 +3,9 @@ package models
 import (
 	"time"
 
-	"google.golang.org/genproto/googleapis/type/decimal"
 	"gorm.io/gorm"
+
+	"github.com/shopspring/decimal"
 )
 
 type Order struct {

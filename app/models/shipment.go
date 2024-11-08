@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"google.golang.org/genproto/googleapis/type/decimal"
+	"github.com/shopspring/decimal"
 	"gorm.io/gorm"
 )
 
@@ -26,7 +26,7 @@ type Shipment struct {
 	Phone       string          `gorm:"size:50;"`
 	Email       string          `gorm:"size:100;"`
 	PostCode    string          `gorm:"size:100;"`
-	ShippedBy   string          `gorm:"size:36;"`
+	ShippedBy   string          `gorm:"size:36"`
 	ShippedAt   time.Time
 	CreatedAt   time.Time
 	UpdatedAt   time.Time

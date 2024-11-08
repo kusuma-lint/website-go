@@ -16,9 +16,3 @@ type ProductImage struct {
 	CreatedAt  time.Time
 	UpdatedAt  time.Time
 }
-
-// Hook untuk mengisi ID otomatis
-// func (productImage *ProductImage) BeforeCreate(tx *gorm.DB) (err error) {
-// 	productImage.ID = uuid.New().String()
-// 	return
-// }

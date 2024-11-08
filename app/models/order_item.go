@@ -3,13 +3,13 @@ package models
 import (
 	"time"
 
-	"google.golang.org/genproto/googleapis/type/decimal"
+	"github.com/shopspring/decimal"
 )
 
 type OrderItem struct {
 	ID              string `gorm:"size:36;not null;uniqueIndex;primary_key"`
 	Order           Order
-	OrderID         string `gorm:"size:36"`
+	OrderID         string `gorm:"size:36;index"`
 	Product         Product
 	ProductID       string `gorm:"size:36;index"`
 	Qty             int
@@ -18,7 +18,7 @@ type OrderItem struct {
 	TaxAmount       decimal.Decimal `gorm:"type:decimal(16,2)"`
 	TaxPercent      decimal.Decimal `gorm:"type:decimal(10,2)"`
 	DiscountAmount  decimal.Decimal `gorm:"type:decimal(16,2)"`
-	DiscountPercent decimal.Decimal `gorm:"type:decimal(16,2)"`
+	DiscountPercent decimal.Decimal `gorm:"type:decimal(10,2)"`
 	SubTotal        decimal.Decimal `gorm:"type:decimal(16,2)"`
 	Sku             string          `gorm:"size:36;index"`
 	Name            string          `gorm:"size:255"`

@@ -1,7 +1,6 @@
 package models
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/shopspring/decimal"
@@ -34,22 +33,18 @@ func (p *Product) GetProducts(db *gorm.DB, perPage int, page int) (*[]Product, i
 	var products []Product
 	var count int64
 
-	// utk menampilkan jumlah produk
 	err = db.Debug().Model(&Product{}).Count(&count).Error
 	if err != nil {
 		return nil, 0, err
 	}
-	fmt.Println("Total Products:", count) // Debug log
 
-	// utk offset
 	offset := (page - 1) * perPage
 
-	// utk menampilkan item produk
 	err = db.Debug().Model(&Product{}).Order("created_at desc").Limit(perPage).Offset(offset).Find(&products).Error
 	if err != nil {
 		return nil, 0, err
 	}
-	fmt.Println("Products on Current Page:", products) // Debug log
+
 	return &products, count, nil
 }
 
